@@ -1,3 +1,6 @@
+import os
+import config
+
 import joblib
 import pandas as pd
 from sklearn import metrics
@@ -5,7 +8,7 @@ from sklearn import tree
 
 def run(fold):
     # read the training data with folds
-    df = pd.read_csv("../input/mnist_train_folds.csv")
+    df = pd.read_csv(config.TRAINING_FILE)
 
     # training data is where the kfold is not equal to provided fold
     df_train = df[df.kfold !=fold].reset_index(drop=True)
@@ -37,7 +40,7 @@ def run(fold):
     # fold number and accuracy
     
     # save the model
-    joblib.dump(clf, f"../models/dt_{fold}.bin")
+    joblib.dump(clf, os.path.join(config.MODEL_OUTPUT, f"dt_{fold}.bin"))
 
 
 if __name__=="__main__":
