@@ -3,8 +3,8 @@ from sklearn import model_selection
 
 if __name__ =="__main__":
     # Read training data
-    df = pd.read_csv("train.csv")
-
+    df = pd.read_csv("../input/mnist_train.csv")
+    
     # we create a new column called kfold and fill it with -1
     df["kfold"] = -1
     
@@ -19,4 +19,4 @@ if __name__ =="__main__":
         df.loc[val_, "kfold"] = fold
 
     # save the new csv with kfold column
-    df.to_csv("train_folds.csv", index=False)
+    df.to_csv("../input/mnist_train_folds.csv", index=False)
