@@ -1,9 +1,12 @@
 import pandas as pd
 from sklearn import model_selection
+# import config
 
 if __name__ =="__main__":
     # Read training data
-    df = pd.read_csv("../input/mnist_train.csv")
+    print(f"Reading input data...")
+    df = pd.read_csv("../input/mnist/mnist_train.csv")
+    # df = pd.read_csv(config.RAW_FILE)
     
     # we create a new column called kfold and fill it with -1
     df["kfold"] = -1
@@ -19,4 +22,7 @@ if __name__ =="__main__":
         df.loc[val_, "kfold"] = fold
 
     # save the new csv with kfold column
-    df.to_csv("../input/mnist_train_folds.csv", index=False)
+    print(f"Writing input data after adding fold column...")
+    df.to_csv("../input/mnist/mnist_train_folds.csv", index=False)
+    # df.to_csv(config.TRAINING_FILE, index=False)
+    

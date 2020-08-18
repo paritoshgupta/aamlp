@@ -2,11 +2,13 @@
 
 import pandas  as pd
 from sklearn import model_selection
+import config
 
 if __name__ =="__main__":
 
     # Read training data
-    df = pd.read_csv("../input/cat-in-the-dat-ii/train.csv")
+    print(f"Reading input data...")
+    df = pd.read_csv(config.TRAINING_FILE)
 
     # create a new column kfold and fill it with -1
     df["kfold"] = -1
@@ -24,6 +26,7 @@ if __name__ =="__main__":
     for fold, (train, valid) in enumerate(skf.split(X=df, y=y)):
         df.loc[valid, 'kfold'] = fold
 
-    df.to_csv("../input/cat-in-the-dat-ii/train_folds.csv", index=False)
+    print(f"Writing input data after adding fold column...")
+    df.to_csv(config.TRAINING_FILE_WITH_FOLDS, index=False)
 
 
