@@ -2,7 +2,7 @@
 
 - URL: https://www.kaggle.com/c/digit-recognizer/data
 
-- Specify the training and test files in '../src/cat-in-the-dat-ii/'
+- Specify the training and test files in '../src/mnist/config.py'
 
     - train data: 'mnist_train.csv'
     - test data: 'mnist_test.csv'

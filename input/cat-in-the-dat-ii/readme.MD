@@ -2,7 +2,7 @@
 
 - URL: https://www.kaggle.com/c/cat-in-the-dat-ii
 
-- add the data in '../input/cat-in-the-dat-ii/' directory 
+- Add the data in '../input/cat-in-the-dat-ii/' directory 
 
-- specify the training and test files in '../src/cat-in-the-dat-ii/'
+- Specify the training and test files in '../src/cat-in-the-dat-ii/config.py'
 
