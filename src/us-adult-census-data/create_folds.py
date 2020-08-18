@@ -17,7 +17,7 @@ if __name__ =="__main__":
     df = df.sample(frac=1).reset_index(drop=True)
 
     # fetch labels
-    y = df.target.values
+    y = df.income.values
 
     # initiate the kfold class from model_selection module
     skf = model_selection.StratifiedKFold(n_splits=5)
