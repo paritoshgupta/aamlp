@@ -19,7 +19,7 @@ def mean_target_encoding(data):
     df.loc[:, "income"] = df.income.map(mapping)
 
     # all columns are features except numerical columns and kfold columns
-    features = [f for f  in df.columns if x not in ("kfold", "income") and x not in num_cols]
+    features = [f for f  in df.columns if f not in ("kfold", "income") and f not in num_cols]
 
     # fill NAs with NONE
     for col in features:
@@ -28,8 +28,8 @@ def mean_target_encoding(data):
     # label encode the columns
     for col in features:
         lbl = preprocessing.LabelEncoder()
-        lbl.fit(data[col])
-        df.loc[:, col] = lbl.transform(lbl[col])
+        lbl.fit(df[col])
+        df.loc[:, col] = lbl.transform(df[col])
 
     # list to store validation dataframes
     encoded_dfs = []
@@ -50,6 +50,7 @@ def mean_target_encoding(data):
 
         encoded_dfs.append(df_valid)
 
+    # create full data frame again and return
     encoded_df = pd.concat(encoded_dfs, axis=0)
 
     return encoded_df
