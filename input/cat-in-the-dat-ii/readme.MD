@@ -1,4 +1,4 @@
-# input data for cat-in-the-data-ii
+# Description - Input data for cat-in-the-dat-ii Categorical Encoding Classification Challenge
 
 - URL: https://www.kaggle.com/c/cat-in-the-dat-ii
 
