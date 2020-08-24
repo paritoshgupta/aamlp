@@ -28,5 +28,3 @@ if __name__ =="__main__":
 
     print(f"Writing input data after adding fold column...")
     df.to_csv(config.TRAINING_FILE_WITH_FOLDS, index=False)
-
-
