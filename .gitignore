@@ -7,7 +7,7 @@
 *.dcm
 
 *.csv
-
+*.xlsx
 *.bin
 
 !models/dt_0.bin
